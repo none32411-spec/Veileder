@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Veileder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+    }
+
+    header {
+      background: #0ea5e9;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #0284c7;
+      margin-bottom: 20px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Veileder</h1>
+  <p>Empowering Visually Impaired Individuals Through Technology</p>
+</header>
+
+<section class="fade">
+  <h2>About Us</h2>
+  <p>
+    Veileder is a registered company under Udyam, focused on developing innovative solutions 
+    for visually impaired individuals. Alongside our mission-driven product development, 
+    we offer high-quality digital services to help businesses grow.
+  </p>
+</section>
+
+<section class="fade">
+  <h2>Our Services</h2>
+
+  <div class="services">
+
+    <div class="card">
+      <h3>Website Development</h3>
+      <p>Modern, responsive websites designed to elevate your brand.</p>
+    </div>
+
+    <div class="card">
+      <h3>Digital Marketing</h3>
+      <p>Strategic marketing solutions to grow your online presence.</p>
+    </div>
+
+    <div class="card">
+      <h3>Content Creation</h3>
+      <p>Engaging video and digital content to attract your audience.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="fade">
+  <h2>Our Vision</h2>
+  <p>
+    We are actively developing an application designed to empower visually impaired 
+    individuals, making technology more accessible and inclusive.
+  </p>
+</section>
+
+<section class="fade">
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+</section>
+
+<footer>
+  <p>© 2026 Veileder. All rights reserved.</p>
+</footer>
+
+<script>
+  // Scroll animation
+  const elements = document.querySelectorAll('.fade');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
